@@ -5,7 +5,7 @@
   gather_facts: no
   become: yes
   tasks:
-    - include: roles/bootstrap.yml
+    - include_tasks: roles/bootstrap.yml
   tags:
     - bootstrap
 
