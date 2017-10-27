@@ -1,0 +1,10 @@
+---
+- name: Change timezone to Asia/Seoul
+  command: cp /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+- name: Update apt
+  apt: update_cache=yes
+
+- name: Install ntp
+  apt: name=ntp state=present
+  notify: restart ntp

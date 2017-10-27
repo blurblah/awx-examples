@@ -1,0 +1,18 @@
+---
+- hosts:
+    - host1
+    - host2
+  gather_facts: no
+  become: yes
+  tasks:
+    - include: roles/bootstrap.yml
+  tags:
+    - bootstrap
+
+- hosts:
+    - host1
+    - host2
+  become: yes
+  roles:
+    - common
+    - docker
